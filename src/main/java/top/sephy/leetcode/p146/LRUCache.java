@@ -1,4 +1,4 @@
-package top.sephy.leetcode.solution146;
+package top.sephy.leetcode.p146;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,17 +6,17 @@ import java.util.Map;
 public class LRUCache {
 
     int capacity = 0;
-    
+
     Map<Integer, LRUCacheDataNode> map;
-    
+
     LRUCacheDataNode head = null;
     LRUCacheDataNode tail = null;
-    
+
     public LRUCache(int capacity) {
         this.capacity = capacity;
         this.map = new HashMap<>();
     }
-    
+
     public int get(int key) {
         LRUCacheDataNode node = map.get(key);
         if (node != null) {
@@ -25,7 +25,7 @@ public class LRUCache {
         }
         return -1;
     }
-    
+
     public void put(int key, int value) {
 
         LRUCacheDataNode old = map.get(key);
@@ -55,7 +55,7 @@ public class LRUCache {
     }
 
     private void insertHead(LRUCacheDataNode node) {
-        
+
         if (head == null) {
             head = node;
             tail = head;
@@ -71,7 +71,7 @@ public class LRUCache {
     private void moveToHead(LRUCacheDataNode node) {
         if (head != node) {
             LRUCacheDataNode tmp = head;
-            
+
             head = node;
 
             // tail node
@@ -94,11 +94,11 @@ public class LRUCache {
     }
 
     class LRUCacheDataNode {
-    
+
         LRUCacheDataNode prev;
 
         LRUCacheDataNode next;
-        
+
         int key;
 
         int val;
@@ -110,10 +110,10 @@ public class LRUCache {
         lRUCache.put(2, 2);
         lRUCache.get(1);
         lRUCache.put(3, 3);
-        lRUCache.get(2); 
+        lRUCache.get(2);
         lRUCache.put(4, 4);
         lRUCache.get(1);
-        lRUCache.get(3); 
-        lRUCache.get(4); 
+        lRUCache.get(3);
+        lRUCache.get(4);
     }
 }
