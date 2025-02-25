@@ -1,6 +1,10 @@
-package top.sephy.leetcode.p23;
+package top.sephy.leetcode.p21;
 
 public class Solution {
+
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        return mergeKLists(new ListNode[]{list1, list2});
+    }
 
     public ListNode mergeKLists(ListNode[] lists) {
         ListsWrapper wrapper = new ListsWrapper(lists);
@@ -50,38 +54,12 @@ public class Solution {
             return min;
         }
     }
-
-    public static void main(String[] args) {
-        ListNode[] lists = new ListNode[3];
-        ListNode l1 = new ListNode(1, new ListNode(4, new ListNode(5)));
-        ListNode l2 = new ListNode(1, new ListNode(3, new ListNode(4)));
-        ListNode l3 = new ListNode(2, new ListNode(6));
-        lists[0] = l1;
-        lists[1] = l2;
-        lists[2] = l3;
-        Solution solution = new Solution();
-        ListNode head = solution.mergeKLists(lists);
-        while (head != null) {
-            System.out.print(head.val + "->");
-            head = head.next;
-        }
-    }
 }
 
 class ListNode {
-
     int val;
-
     ListNode next;
-
     ListNode() {}
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
