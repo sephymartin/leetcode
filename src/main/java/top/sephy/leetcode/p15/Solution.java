@@ -28,7 +28,6 @@ public class Solution {
         Arrays.sort(nums);
 
         int zeroIdxFrom = -1;
-        int zeroIdxTo = -1;
         int zeroCount = 0;
 
         for (int i = 0; i < nums.length; i++) {
@@ -36,7 +35,6 @@ public class Solution {
                 if (zeroIdxFrom == -1) {
                     zeroIdxFrom = i;
                 }
-                zeroIdxTo = i;
                 zeroCount++;
             }
         }
@@ -69,8 +67,8 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-//        List<List<Integer>> lists = solution.threeSum(new int[] {-1, 0, 1, 2, -1, -4});
-        List<List<Integer>> lists = solution.threeSum(new int[] {-2,0,1,1,2});
+        // List<List<Integer>> lists = solution.threeSum(new int[] {-1, 0, 1, 2, -1, -4});
+        List<List<Integer>> lists = solution.threeSum(new int[] {-2, 0, 1, 1, 2});
         for (List<Integer> list : lists) {
             System.out.println(list);
         }
